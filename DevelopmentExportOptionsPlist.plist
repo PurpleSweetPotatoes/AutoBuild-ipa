@@ -3,6 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>method</key>
-	<string>development</string>
+	<string>MethodName</string>
+	<key>provisioningProfiles</key>
+	<dict/>
+	<key>app identifier</key>
+	<string>provisioning profile name</string>
 </dict>
 </plist>

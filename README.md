@@ -1,6 +1,8 @@
 # AutoBuild-ipa
 自动打包（需在项目中配置好描述文件、开发者证书）
 
+> xcode10后 默认打包构建方式以改变(检查更严格)，若出现无法打包的情况 可带入命令`-UseModernBuildSystem=NO`即使用不使用默认打包构建系统
+
 使用方式:
 
 先配置DevelopmentExportOptionsPlist文件中的信息(解包方法，标识符及对应的描述文件名称)

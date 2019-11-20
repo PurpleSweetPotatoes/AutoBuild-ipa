@@ -2,7 +2,7 @@
 
 ### 手动创建证书
 
-####配置信息
+#### 配置信息
 
 DevelopmentExportOptionsPlist文件中的信息(打包方式，标识符及对应的描述文件名称)
 

@@ -6,7 +6,9 @@
 
 import zipfile
 import re
+import json
 import plistlib
+import requests
 
 class iPdModel(object):
     """docstring for iPdModel"""
@@ -38,7 +40,12 @@ class iPdModel(object):
             if m is not None:
                 return m.group()
 
+class DDTalk(object):
+    # 钉钉消息发送
+    @staticmethod
+    def sendMsg(params, token="xxxxxxxxxxx"):
+        r = requests.post(url='https://oapi.dingtalk.com/robot/send?access_token='+token,data=json.dumps(params),headers={'Content-Type':'application/json'})
+
 
 if __name__ == '__main__':
-    model = iPdModel("/Users/teach/Desktop/CloudEye-ipa/CloudEye.ipa")
-    print(model.appName, model.identifier, model.version, model.build)
+    pass

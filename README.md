@@ -19,7 +19,9 @@ iOS自动构建应用并上传至蒲公英或firim, 具体参看buildIpa.sh文�
 
 > 项目路径为*.xcodeproj上级目录
 
-终端直接调用`buildIpa.sh`并追加2个参数,`$1`为数字,`$2`为对应项目路径
+终端直接调用`buildIpa.sh`并追加2个参数,`$1`为数字($1%2,0为debug,1为Release),`$2`为对应项目路径
+
+若不想使用环境参数 可以直接修改`buildIpa`文件内容
 
 若无sh文件执行权限，可先执行`chmod +x sh文件路径`
 

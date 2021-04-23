@@ -1,21 +1,53 @@
 # AutoBuild-ipa
 
-iOS自动构建应用并上传至蒲公英或firim, 具体参看buildIpa.sh文件
+iOS自动构建应用并上传至蒲公英或firim或appstore, 具体参看buildIpa.sh文件
 
-## 语言 
+## xcodeIpaShell
 
-> python3 shell 
+> shell脚本编写，无需依赖环境，需要对应执行权限
+>
+> 可在任意路径下执行，建议导出配置使用自动构建证书方式，方便快捷
 
-三方库 requests(网络请求)
+**注意**
 
-## 文件
+1. 工程scheme名称须与工程名相同，对应`buildIpa.sh`文件
+2. 上传测试应用后会发送对应的钉钉机器人消息，对应`uploadIpa.sh`文件
+3. 如导包配置为app-store方式，会自动上传至应用商店，对应`uploadIpa.sh`文件
+4. 脚本内部直接使用`xcworkspace`方式打包，对应`buildIpa.sh`文件
+
+**文件目录结构**
+
+```sh
+xcodeIpaShell
+├── buildIpa.sh 		# 构建脚本
+├── ipaInfo.sh 			# 应用信息查询脚本
+├── start.sh 				# 脚本入口
+└── uploadIpa.sh		# 应用上传脚本
+```
+
+**使用**
+
+`sh 脚本入口路径 构建环境 工程路径 导包plist文件路径`
+
++ 脚本入口路径:  start.sh路径
++ 构建环境: 一般为Debug或Release
++ 工程路径: *.xcodeproj所在目录
++ 导包plist文件路径：ipa包导出配置plist文件
+
+## Upload
+
+### 环境 
+
+> python3、requests，此脚本不包含appstore上传
+
+#### 文件
 
 + buildIpa.sh 打包上传文件需配置`pgyToken`参数
 + options.plist 导出参数文件,可用xcode打包导出ipa后使用其中的plist配置即可,建议使用自动创建证书
 + firIm.py firim上传文件需配置`firToken`参数
 + uploadTools.py 辅助工具用于ipa信息读取和钉钉机器人消息发送,需配置`DDTalk.sendMsg`方法中`token`值(钉钉机器人的token),如不使用注释上传文件中sendMsg方法即可
 
-## 使用
+#### 使用
 
 > 项目路径为*.xcodeproj上级目录
 
@@ -29,4 +61,3 @@ iOS自动构建应用并上传至蒲公英或firim, 具体参看buildIpa.sh文�
 # 0代表debug 1代表release
 ./buildIpa.sh 0 项目路径
 ```
-

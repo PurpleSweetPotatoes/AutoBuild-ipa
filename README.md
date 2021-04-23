@@ -1,6 +1,6 @@
 # AutoBuild-ipa
 
-iOS自动构建应用并上传至蒲公英或firim或appstore, 具体参看buildIpa.sh文件
+iOS自动构建应用并上传至蒲公英或firim或appstore
 
 ## xcodeIpaShell
 

@@ -34,7 +34,7 @@ xcodeIpaShell
 + 工程路径: *.xcodeproj所在目录
 + 导包plist文件路径：ipa包导出配置plist文件
 
-## Upload
+## upload
 
 ### 环境 
 

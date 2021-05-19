@@ -122,7 +122,7 @@ getIpaInfo() {
     ipaName=$appName
     ipaVersion=$appVersion
     ipaId=$appBundleId
-    echo "名称-$ipaName\n版本号:$ipaVersion\n标识符:$ipaId"
+    echo "应用:$ipaName\n版本号:$ipaVersion\n标识符:$ipaId"
 }
 
 sendDingTalk() {

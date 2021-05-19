@@ -44,7 +44,7 @@ loadIpaInfo() {
 
     # 获取app的名称、版本号、build号
     appName=`/usr/libexec/PlistBuddy -c "Print :CFBundleDisplayName" $lcmInfoPlist`
-    if [[ !appName ]]; then
+    if [[ ${#appName} -eq 0 ]]; then
         appName=`/usr/libexec/PlistBuddy -c "Print :CFBundleName" $lcmInfoPlist`
     fi
     appVersion=`/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" $lcmInfoPlist`

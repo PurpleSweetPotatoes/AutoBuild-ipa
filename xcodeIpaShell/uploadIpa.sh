@@ -77,7 +77,7 @@ firimUpload() {
 
         re=`curl -F "key=$key" -F "token=$token" -F "file=@$1" -F "x:name=$ipaName" -F "x:version=$ipaVersion" -F "x:build=1" -F "x:changelog=$ipaType" $uploadUrl`
 
-        completed=`echo $re | sed 's/.*is_completed":\([^}]*\).*/\1/g'`
+        completed=`echo $re | sed 's/.*is_completed":\([^},"]*\).*/\1/g'`
         if [[ $completed == true ]]; then
             echo "**** 上传完成****"
             iconUrl=$firIcon

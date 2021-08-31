@@ -1,5 +1,8 @@
 # AutoBuild-ipa
 
+> 对于M1脚本打包会出现不包含此设备的错误描述
+> [解决方案](https://developer.apple.com/forums/thread/668952) xcodebuild archive 中添加 `-destination 'generic/platform=iOS'`即可
+
 iOS自动构建应用并上传至蒲公英或firim或appstore
 
 ## xcodeIpaShell

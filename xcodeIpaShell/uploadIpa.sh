@@ -95,6 +95,12 @@ firimUpload() {
 }
 
 appStroeUpload() {
+    echo "*** 保存dSYM符号表文件 ***"
+    getIpaInfo $1
+    ipaName=`find . -name *.xcarchive | awk -F "[/.]" '{print $(NF-1)}'`
+    # 保存覆盖符号表
+    cp -rfp $ipaName.xcarchive/dSYMs/BasicFramework.app.dSYM/ ~/Desktop/dSYMs/$ipaName/$ipaVersion.dSYM/
+    
     echo "*** 正在上传至appStroe,请稍后... ***"
 
     # # 验证(可忽略)

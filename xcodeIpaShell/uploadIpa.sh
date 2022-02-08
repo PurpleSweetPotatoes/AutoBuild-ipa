@@ -98,6 +98,8 @@ appStroeUpload() {
     echo "*** 保存dSYM符号表文件 ***"
     getIpaInfo $1
     ipaName=`find . -name *.xcarchive | awk -F "[/.]" '{print $(NF-1)}'`
+    # 创建对应文件夹
+    mkdir -p ~/Desktop/dSYMs/$ipaName/
     # 保存覆盖符号表
     cp -rfp $ipaName.xcarchive/dSYMs/BasicFramework.app.dSYM/ ~/Desktop/dSYMs/$ipaName/$ipaVersion.dSYM/
     
